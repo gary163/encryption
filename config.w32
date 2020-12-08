@@ -1,0 +1,7 @@
+ARG_ENABLE('encryption', 'encryption support', 'no');
+
+if (PHP_ENCRYPTION != 'no') {
+	AC_DEFINE('HAVE_ENCRYPTION', 1, 'encryption support enabled');
+
+	EXTENSION('encryption', 'encryption.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
